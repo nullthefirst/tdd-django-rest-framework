@@ -1,4 +1,5 @@
 super_pwd.txt
+.idea/
 # Course requirements below
 __pycache__
 env
