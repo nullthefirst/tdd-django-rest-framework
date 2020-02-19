@@ -1,11 +1,14 @@
+# docker compose file version
 version: '3.7'
 
 services:
   movies:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
+    # volumes is used to mount the code unto the docker container, updating whenever a change is made
+    # "without this, you would have to re-build the image each time you make a change to the code"
     volumes:
-      - .:/usr/src/
+      - ./:/usr/src/
     ports:
       - 8000:8000
     env_file:
